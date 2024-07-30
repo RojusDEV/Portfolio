@@ -1,0 +1,73 @@
+@use "../../scss/abstract/colors";
+@use "../../scss/abstract/variables";
+.Hero__wraper-bottom {
+  text-align: center;
+  .bottom-title {
+    font-size: variables.$font-seccondary-size;
+    letter-spacing: 0.2em;
+  }
+  .icons-list {
+    margin-top: 4em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: center;
+    .icon-el {
+      cursor: pointer;
+      //Change color when hovering to original and add sparkles
+      list-style: none;
+      .nostyle {
+        &:link {
+          text-decoration: inherit;
+          color: inherit;
+          cursor: pointer;
+        }
+        &:visited {
+          text-decoration: inherit;
+          color: inherit;
+          cursor: pointer;
+        }
+      }
+      svg {
+        position: relative;
+        transition: transform 250ms ease-in-out;
+        fill: linear-gradient(
+          90deg,
+          rgba(192, 192, 192, 1) 35%,
+          rgba(101, 101, 101, 1) 100%
+        );
+      }
+      &:hover {
+        svg {
+          transform: translateY(-1em);
+        }
+        svg[data-logo="TS-logo"] {
+          fill: #007acc;
+        }
+        svg[data-logo="HTML-logo"] {
+          fill: #e34c26;
+        }
+        svg[data-logo="SASS-logo"] {
+          fill: #cc6699;
+        }
+        svg[data-logo="tailwind-logo"] {
+          fill: #38bdf8;
+        }
+        svg[data-logo="React-logo"] {
+          fill: #61dbfb;
+        }
+        svg[data-logo="NextJS-logo"] {
+          -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+          filter: invert(100%);
+          position: relative;
+        }
+        svg[data-logo="NodeJs-logo"] {
+          fill: #3c873a;
+        }
+        svg[data-logo="SQL-logo"] {
+          fill: #396c94;
+        }
+      }
+    }
+  }
+}

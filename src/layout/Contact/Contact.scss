@@ -1,0 +1,111 @@
+.contactMe {
+  background-color: #191919;
+  .contactMe__wrapper {
+    padding: 5.125rem 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 50% 50%;
+    .col {
+      .connect-heading {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #8338ec;
+      }
+      .connect-sub {
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
+      .connect_socialMediaList {
+        list-style: none;
+        display: flex;
+        gap: 2em;
+      }
+    }
+    .col-testimonial {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .col > form {
+      display: grid;
+      gap: 1em;
+      align-items: start;
+      margin-left: auto;
+      max-width: 31.25rem;
+
+      input,
+      textarea {
+        max-width: 31.25rem;
+        width: 100%;
+        padding: 1em;
+        border-radius: 0.25em;
+        background-color: #32323f;
+        border: none;
+        color: white;
+        font-weight: 600;
+        &:focus {
+          outline: 0.125rem solid #7562e0;
+          outline-offset: 0.125rem;
+        }
+      }
+      input[value="Send"] {
+        background-color: #7562e0;
+        font-weight: 800;
+        cursor: pointer;
+        max-width: 10.875rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .contactMe {
+    padding: 0 2em;
+  }
+}
+
+//Small screen
+
+@media screen and (max-width: 640px) {
+  .contactMe {
+    .contactMe__wrapper {
+      grid-template-columns: 100%;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      gap: 4em;
+      .col > form {
+        max-width: 100%;
+
+        input,
+        textarea {
+          max-width: 100%;
+          width: 100%;
+          padding: 1em;
+        }
+        input[value="Send"] {
+          background-color: #7562e0;
+          font-weight: 800;
+          cursor: pointer;
+          max-width: 100%;
+          padding: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+
+
+.show {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 10s;
+}
+
+
+.hidden {
+  opacity: 0;
+}

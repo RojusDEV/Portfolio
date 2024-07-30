@@ -1,0 +1,71 @@
+@use "../../../scss/abstract/colors";
+
+.nostyle {
+  &:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  &:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.project-card-wrapper {
+  border-radius: 18px;
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  transition: 200ms ease-in-out;
+
+  .project-date {
+    opacity: 0;
+    position: absolute;
+    background-color: #e63946;
+    font-weight: 600;
+    padding: 0.25em;
+    font-size: 1.3rem;
+    right: -1em;
+    top: -1em;
+    border-radius: 0.5em;
+    transition: opacity 0.5s linear, visibility 0.5s linear;
+  }
+
+  &:hover {
+    .project-date {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .project-card-bg {
+    height: 14em;
+    width: 100%;
+    background-size: cover;
+    border-radius: 18px 18px 0 0;
+  }
+  .project__info {
+    background-color: colors.$card-bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75em 1.43em;
+    border-radius: 0 0 18px 18px;
+    .project-info-col {
+      display: grid;
+      justify-items: start;
+      .click-here {
+        color: #c5c5c5;
+        font-weight: 800;
+        font-size: 0.625rem;
+      }
+    }
+  }
+
+  &:hover {
+    //Hover state animation
+    transform: translateY(-20px);
+    box-shadow: 0 15px 20px 2px rgba(0, 0, 0, 0.292);
+  }
+}

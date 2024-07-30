@@ -1,0 +1,25 @@
+.navbar {
+  background-color: #1E1E1D;
+  padding: 1em 0;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.3);
+  .navbar__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    .ordered-list {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      list-style: none;
+      color: white;
+      & > .nav-el {
+        transition: 200ms ease-in;
+        cursor: pointer;
+        font-weight: 600;
+        &:hover {
+          transform: translateY(-8px);
+
+        }
+      }
+    }
+  }
+}

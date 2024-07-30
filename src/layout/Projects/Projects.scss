@@ -1,0 +1,40 @@
+.projects {
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 15em auto 5em auto;
+  .projects__wrapper {
+    display: grid;
+    align-items: center;
+    // justify-content: center;
+    text-align: center;
+    gap: 3em;
+    .projects-title {
+      background-image: linear-gradient(
+        90.5deg,
+        rgba(152, 45, 255, 1) 0.7%,
+        rgba(90, 241, 255, 1) 51.5%,
+        rgba(65, 239, 164, 1) 100.6%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 1320px) {
+    .projects {
+      .projects__wrapper {
+        padding: 0 2em;
+      }
+    }
+}

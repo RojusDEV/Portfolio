@@ -1,0 +1,96 @@
+@use "../../scss/abstract/colors";
+@use "../../scss/abstract/variables";
+
+.Hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  .Hero__wraper-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    .Hero__section__left {
+      display: grid;
+      justify-items: start;
+      span {
+        font-size: variables.$font-heading-size;
+        font-weight: variables.$font-semibold;
+      }
+      .title-name {
+        background: linear-gradient(
+          90deg,
+          rgba(114, 9, 183, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    }
+    .Hero__section__right {
+      .shape-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .shape {
+        width: 400px;
+        height: 400px;
+        background: url("./profile_image.jpg");
+        background-position: center;
+        background-size: contain;
+        // background: linear-gradient(64deg, #f34868 23%, #f24768 23%, #9e00ec 80%);
+        animation: blob 8s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+  }
+  25% {
+    border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+  }
+}
+
+@keyframes hoveringLogo {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 2em;
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .Hero {
+    padding: 0 2em;
+  }
+}
+
+//medium viewport
+
+@media screen and (max-width: 800px) {
+  .Hero {
+    .Hero__wraper-top {
+      display: flex;
+      margin: 5em 0;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      color: white;
+      .Hero__section__left {
+        justify-items: center;
+      }
+    }
+  }
+  .shape-container {
+    height: auto;
+    margin: 3em 0;
+  }
+}
