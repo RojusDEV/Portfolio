@@ -96,16 +96,3 @@
     }
   }
 }
-
-
-
-.show {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 10s;
-}
-
-
-.hidden {
-  opacity: 0;
-}
