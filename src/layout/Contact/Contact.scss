@@ -34,7 +34,10 @@
       align-items: start;
       margin-left: auto;
       max-width: 31.25rem;
-
+      .form-error-message {
+        color: #cc0000;
+        font-weight: 500;
+      }
       input,
       textarea {
         max-width: 31.25rem;
@@ -78,7 +81,7 @@
       gap: 4em;
       .col > form {
         max-width: 100%;
-
+        background-color: red;
         input,
         textarea {
           max-width: 100%;
@@ -92,6 +95,7 @@
           max-width: 100%;
           padding: 1.5em;
         }
+
       }
     }
   }
