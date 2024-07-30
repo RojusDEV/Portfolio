@@ -17,9 +17,11 @@ const Contact = () => {
         })
         .then(
           () => {
+            setShowConfetti(true);
             console.log('SUCCESS!');
           },
           (error) => {
+            setShowConfetti(false);
             console.log('FAILED...', error.text);
           },
         );
