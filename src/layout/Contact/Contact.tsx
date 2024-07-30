@@ -10,25 +10,18 @@ const Contact = () => {
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (form.current) {
+    if(form.current) {
       emailjs
-        .sendForm(
-          import.meta.env.SERVICE_ID,
-          import.meta.env.TEMPLATE_ID,
-          form.current,
-          {
-            publicKey: import.meta.env.PUBLIC_KEY,
-          }
-        )
+        .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, {
+          publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        })
         .then(
           () => {
-            console.log("SUCCESS!");
-            setShowConfetti(true);
+            console.log('SUCCESS!');
           },
           (error) => {
-            console.log("FAILED...", error.text);
-            setShowConfetti(false);
-          }
+            console.log('FAILED...', error.text);
+          },
         );
     }
   };
@@ -58,8 +51,8 @@ const Contact = () => {
         </div>
         <div className="col">
           <form ref={form} onSubmit={sendEmail}>
-            <input type="text" name="user_name" placeholder="Name: " />
-            <input type="email" name="user_email" placeholder="Email: " />
+            <input type="text" name="user_name" placeholder="Name: " autoComplete="true" />
+            <input type="email" name="user_email" placeholder="Email: " autoComplete="true"/>
             <textarea name="message" placeholder="Message: " />
             <input type="submit" value="Send" />
           </form>
