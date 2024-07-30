@@ -87,10 +87,14 @@
       .Hero__section__left {
         justify-items: center;
       }
+      .Hero__section__right {
+        //TODO MAKE SMALLER ON PHONE
+        .shape-container {
+          height: auto;
+          margin: 3em 0;
+          height: auto;
+        }
+      }
     }
-  }
-  .shape-container {
-    height: auto;
-    margin: 3em 0;
   }
 }
