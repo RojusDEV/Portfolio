@@ -58,7 +58,6 @@ const Contact = () => {
     }
   };
 
-  console.log(errors);
   return (
     <section className="contactMe">
       <div className="contactMe__wrapper">
