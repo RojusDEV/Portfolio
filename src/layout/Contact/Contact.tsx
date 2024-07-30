@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { FaFacebook, FaInstagram, FaSms } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import "./Contact.scss";
-import Confetti from "react-confetti";
+import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -32,14 +32,7 @@ const Contact = () => {
         );
     }
   };
-  const width = document.body.scrollWidth;
-  const height = document.body.clientWidth;
 
-
-  const test = () => {
-    setShowConfetti(true);
-
-  }
   return (
     <section className="contactMe">
       <div className="contactMe__wrapper">
@@ -70,16 +63,9 @@ const Contact = () => {
             <textarea name="message" placeholder="Message: " />
             <input type="submit" value="Send" />
           </form>
-          <button onClick={test}>test</button>
         </div>
       </div>
-      <Confetti
-        width={width}
-        height={height}
-        tweenDuration={0.01}
-        run={showConfetti}
-        className={showConfetti ? "show" : "hidden"}
-      />
+      {showConfetti && <Fireworks autorun={{ speed: 3, duration: 1000 }} />}
     </section>
   );
 };
