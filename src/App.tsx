@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import Contact from "./layout/Contact/Contact";
 import Hero from "./layout/Hero/Hero";
 import Navbar from "./layout/Navbar/Navbar";
 import Projects from "./layout/Projects/Projects";
 import "./scss/style.scss";
-
+import ReactGA from "react-ga4";
 // TODO:
 //   [] Add comets in the background
 //   [] Stack redirects to technologies
@@ -11,6 +12,17 @@ import "./scss/style.scss";
 //   [X] ADD BACKGROUND GRID
 //   [] Add confetti after submit !!!!
 //   [] Add arrow button in hero to scroll down
+
+const trackingId = import.meta.env.VITE_TRACKING_ID;
+ReactGA.initialize([
+  {
+    trackingId: trackingId,
+    // gaOptions: {}, // optional
+    // gtagOptions: {...}, // optional
+  },
+]);
+
+ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
 
 function App() {
   return (

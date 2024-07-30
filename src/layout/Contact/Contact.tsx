@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { FaFacebook, FaInstagram, FaSms } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import "./Contact.scss";
+import ReactGA from "react-ga4";
 import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
 import z from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -55,6 +56,13 @@ const Contact = () => {
             console.log("FAILED...", error.text);
           }
         );
+      ReactGA.event({
+        category: "your category",
+        action: "Send email",
+        label: "Form", // optional
+        nonInteraction: false, // optional, true/false
+        transport: "xhr", // optional, beacon/xhr/image
+      });
     }
   };
 
