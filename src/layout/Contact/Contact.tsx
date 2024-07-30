@@ -60,7 +60,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      {showConfetti && <Fireworks autorun={{ speed: 3, duration: 1000 }} />}
+      {showConfetti && <Fireworks autorun={{ speed: 3, duration: 2000 }} />}
     </section>
   );
 };
