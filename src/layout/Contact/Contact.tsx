@@ -59,7 +59,7 @@ const Contact = () => {
         );
       ReactGA.event({
         category: "Send Email",
-        action: "send",
+        action: "send_email",
         label: "Form", // optional
         nonInteraction: false, // optional, true/false
         transport: "xhr", // optional, beacon/xhr/image
