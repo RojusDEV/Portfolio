@@ -13,28 +13,26 @@ import ReactGA from "react-ga4";
 //   [] Add confetti after submit !!!!
 //   [] Add arrow button in hero to scroll down
 
-const trackingId = import.meta.env.VITE_TRACKING_ID;
-
-let ran = true;
-
-useEffect(() => {
-  if (ran) {
-    ReactGA.initialize(trackingId);
-    // Send pageview with a custom path
-    ReactGA.send({
-      hitType: "pageview",
-      page: "/",
-      title: "Porfolio Page",
-    });
-  }
-
-  return () => {
-    ran = false;
-  };
-}, []);
-
-
 function App() {
+  const trackingId = import.meta.env.VITE_TRACKING_ID;
+
+  let ran = true;
+
+  useEffect(() => {
+    if (ran) {
+      ReactGA.initialize(trackingId);
+      // Send pageview with a custom path
+      ReactGA.send({
+        hitType: "pageview",
+        page: "/",
+        title: "Porfolio Page",
+      });
+    }
+
+    return () => {
+      ran = false;
+    };
+  }, []);
   return (
     <div className="main-wrapper" id="content">
       <Navbar />
