@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Contact from "./layout/Contact/Contact";
 import Hero from "./layout/Hero/Hero";
 import Navbar from "./layout/Navbar/Navbar";
@@ -13,6 +14,25 @@ import ReactGA from "react-ga4";
 //   [] Add arrow button in hero to scroll down
 
 const trackingId = import.meta.env.VITE_TRACKING_ID;
+
+let ran = true;
+
+useEffect(() => {
+  if (ran) {
+    ReactGA.initialize(trackingId);
+    // Send pageview with a custom path
+    ReactGA.send({
+      hitType: "pageview",
+      page: "/landingpage",
+      title: "Landing Page",
+    });
+  }
+
+  return () => {
+    ran = false;
+  };
+}, []);
+
 ReactGA.initialize([
   {
     trackingId: trackingId,
@@ -21,7 +41,7 @@ ReactGA.initialize([
   },
 ]);
 
-ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
+ReactGA.send({ hitType: "pageview", page: "/", title: "Custom Title" });
 
 function App() {
   return (

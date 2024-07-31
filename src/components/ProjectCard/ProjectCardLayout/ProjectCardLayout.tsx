@@ -27,8 +27,8 @@ const ProjectCardLayout = ({
 
   const trackClick = () => {
     ReactGA.event({
-      category: "Project_Click",
-      action: "CLICK",
+      category: "project click",
+      action: "click",
       label: "Form", // optional
       nonInteraction: false, // optional, true/false
       transport: "xhr", // optional, beacon/xhr/image

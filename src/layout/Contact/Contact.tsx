@@ -58,7 +58,7 @@ const Contact = () => {
           }
         );
       ReactGA.event({
-        category: "send_email",
+        category: "Send Email",
         action: "send",
         label: "Form", // optional
         nonInteraction: false, // optional, true/false
