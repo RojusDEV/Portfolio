@@ -2,6 +2,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import "./ProjectCardStyles.scss";
 import React, { useEffect, useRef } from "react";
 import { GoArrowUpRight } from "react-icons/go";
+import ReactGA from "react-ga4";
 const ProjectCardLayout = ({
   children,
   bgImageSrc,
@@ -24,9 +25,19 @@ const ProjectCardLayout = ({
     }
   }, [isInView]);
 
+  const trackClick = () => {
+    ReactGA.event({
+      category: "Project_Click",
+      action: "CLICK",
+      label: "Form", // optional
+      nonInteraction: false, // optional, true/false
+      transport: "xhr", // optional, beacon/xhr/image
+    });
+  }
+
   return (
     <div className="" ref={ref}>
-      <a href={projectLink} target="_blank" aria-label="Project" className="nostyle">
+      <a href={projectLink} target="_blank" aria-label="Project" className="nostyle" onClick={trackClick}>
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 75 },

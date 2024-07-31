@@ -8,6 +8,7 @@ import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
 import z from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -57,8 +58,8 @@ const Contact = () => {
           }
         );
       ReactGA.event({
-        category: "your category",
-        action: "Send email",
+        category: "send_email",
+        action: "send",
         label: "Form", // optional
         nonInteraction: false, // optional, true/false
         transport: "xhr", // optional, beacon/xhr/image
