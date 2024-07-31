@@ -33,6 +33,7 @@ function App() {
       ran = false;
     };
   }, []);
+
   return (
     <div className="main-wrapper" id="content">
       <Navbar />
