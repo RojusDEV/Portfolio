@@ -23,8 +23,8 @@ useEffect(() => {
     // Send pageview with a custom path
     ReactGA.send({
       hitType: "pageview",
-      page: "/landingpage",
-      title: "Landing Page",
+      page: "/",
+      title: "Porfolio Page",
     });
   }
 
@@ -33,15 +33,6 @@ useEffect(() => {
   };
 }, []);
 
-ReactGA.initialize([
-  {
-    trackingId: trackingId,
-    // gaOptions: {}, // optional
-    // gtagOptions: {...}, // optional
-  },
-]);
-
-ReactGA.send({ hitType: "pageview", page: "/", title: "Custom Title" });
 
 function App() {
   return (
