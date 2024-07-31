@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Contact from "./layout/Contact/Contact";
 import Hero from "./layout/Hero/Hero";
 import Navbar from "./layout/Navbar/Navbar";
