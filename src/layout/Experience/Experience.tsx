@@ -14,10 +14,10 @@ const Experience = () => {
       company: "Edenred",
       date: "March 2026 – Present",
       points: [
-        "Started internship as a QA tester for web applications",
-        "Performed manual testing and identified bugs",
+        "Started internship as a QA tester for desktop applications",
+        "Performed manual testing and identified bugs in user workflows",
         "Worked with developers to improve product quality",
-        "Learned QA processes, tools, and testing workflows",
+        "Learned QA processes, tools like JIRA and XRAY",
       ],
     },
     {
@@ -26,9 +26,9 @@ const Experience = () => {
       date: "2020 – Present",
       points: [
         "Started learning web development in 2020",
-        "Built projects using HTML, CSS, and JavaScript",
-        "Explored backend development and APIs",
-        "Continuously improving through practice and projects",
+        "Built projects with React and Next.js",
+        "Worked on backend development with Node.js and Express",
+        "Explored APIs and full-stack project workflows",
       ],
     },
   ];
