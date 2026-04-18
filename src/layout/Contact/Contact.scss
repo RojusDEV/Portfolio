@@ -1,5 +1,5 @@
 .contactMe {
-  background-color: #191919;
+  background: linear-gradient(to bottom, #0f0f1a, #0a0a12);
   .contactMe__wrapper {
     padding: 5.125rem 0;
     max-width: 1280px;
@@ -21,6 +21,31 @@
         list-style: none;
         display: flex;
         gap: 2em;
+        .social-media-el {
+          cursor: pointer;
+          a:link,
+          a:visited {
+            text-decoration: inherit;
+            color: inherit;
+            cursor: pointer;
+          }
+
+          .social-icon-box {
+            background-color: #2a2a2a;
+            border-radius: 0.75rem;
+            padding: 0.35rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .social-icon {
+            width: 2.1875rem;
+            height: 2.1875rem;
+            object-fit: contain;
+            display: block;
+          }
+        }
       }
     }
     .col-testimonial {
@@ -37,6 +62,11 @@
       .form-error-message {
         color: #cc0000;
         font-weight: 500;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
       }
       input,
       textarea {
@@ -58,6 +88,24 @@
         font-weight: 800;
         cursor: pointer;
         max-width: 10.875rem;
+      }
+
+      .submit-success {
+        background-color: #1f9d57;
+      }
+
+      .send-confirmation {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #2fcf72;
+        font-weight: 700;
+
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+          object-fit: contain;
+        }
       }
     }
   }
@@ -94,7 +142,6 @@
           max-width: 100%;
           padding: 1.5em;
         }
-
       }
     }
   }

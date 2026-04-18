@@ -1,0 +1,210 @@
+.experience {
+  background: linear-gradient(to bottom, #0f0f1a, #0a0a12);
+  padding: 5.125rem 0;
+
+  .experience__wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    .experience-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #8338ec;
+      text-align: center;
+      margin-bottom: 4rem;
+      letter-spacing: 0.1em;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background-color: #7562e0;
+        top: 0;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        position: relative;
+        align-items: center;
+
+        &:nth-child(even) {
+          direction: rtl;
+
+          .timeline-card {
+            direction: ltr;
+          }
+        }
+
+        .timeline-node {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 40px;
+          height: 40px;
+          background-color: #7562e0;
+          border: 3px solid #0a0a12;
+          border-radius: 50%;
+          box-shadow:
+            0 0 0 4px #7562e0,
+            0 0 20px rgba(117, 98, 224, 0.6);
+          z-index: 10;
+        }
+
+        .timeline-card {
+          background-color: #12121c;
+          border: 1px solid rgba(117, 98, 224, 0.3);
+          border-radius: 20px;
+          padding: 24px;
+          transition: all 0.3s ease;
+          box-shadow: 0 8px 32px rgba(117, 98, 224, 0.1);
+
+          &:hover {
+            transform: scale(1.05);
+            box-shadow:
+              0 12px 48px rgba(117, 98, 224, 0.4),
+              inset 0 0 20px rgba(117, 98, 224, 0.1);
+            border-color: rgba(117, 98, 224, 0.6);
+          }
+
+          .card-header {
+            margin-bottom: 0.75rem;
+
+            .card-title {
+              font-size: 20px;
+              font-weight: 700;
+              color: #ffffff;
+              margin: 0 0 0.5rem 0;
+            }
+
+            .card-company {
+              font-size: 14px;
+              color: #7562e0;
+              margin: 0;
+              font-weight: 600;
+            }
+          }
+
+          .card-date {
+            font-size: 13px;
+            color: #b0b0c3;
+            margin: 0.5rem 0 1.25rem 0;
+            font-weight: 500;
+          }
+
+          .card-points {
+            margin: 0;
+            padding-left: 1.5rem;
+            list-style: none;
+
+            li {
+              font-size: 14px;
+              color: #b0b0c3;
+              margin-bottom: 0.75rem;
+              line-height: 1.6;
+              position: relative;
+              padding-left: 0.75rem;
+
+              &::before {
+                content: "•";
+                position: absolute;
+                left: -0.75rem;
+                color: #7562e0;
+                font-weight: bold;
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience {
+    .experience__wrapper {
+      .timeline {
+        &::before {
+          left: 20px;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          margin-bottom: 2rem;
+
+          &,
+          &:nth-child(even) {
+            direction: ltr;
+
+            .timeline-card {
+              direction: ltr;
+            }
+          }
+
+          .timeline-node {
+            left: 20px;
+          }
+
+          .timeline-card {
+            margin-left: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .experience {
+    padding: 3rem 0;
+
+    .experience__wrapper {
+      padding: 0 1.5rem;
+
+      .experience-title {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .timeline {
+        padding: 1rem 0;
+
+        .timeline-item {
+          margin-bottom: 2rem;
+
+          .timeline-card {
+            padding: 20px;
+
+            .card-header {
+              .card-title {
+                font-size: 18px;
+              }
+            }
+
+            .card-points {
+              li {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

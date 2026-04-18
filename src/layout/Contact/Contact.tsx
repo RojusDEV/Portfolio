@@ -1,7 +1,5 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaFacebook, FaInstagram, FaSms } from "react-icons/fa";
-import { RiTwitterXFill } from "react-icons/ri";
 import "./Contact.scss";
 import ReactGA from "react-ga4";
 import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
@@ -12,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [successfullySent, setSuccessfullySent] = useState(false);
   const schema = z.object({
     user_email: z
       .string()
@@ -33,10 +32,11 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<schemaType>({ resolver: zodResolver(schema) });
-  const sendEmail: SubmitHandler<schemaType> = (data) => {
-    console.log(data);
+
+  const sendEmail: SubmitHandler<schemaType> = () => {
     if (form.current) {
       emailjs
         .sendForm(
@@ -45,17 +45,18 @@ const Contact = () => {
           form.current,
           {
             publicKey: import.meta.env.VITE_PUBLIC_KEY,
-          }
+          },
         )
         .then(
           () => {
             setShowConfetti(true);
-            console.log("SUCCESS!");
+            setSuccessfullySent(true);
+            reset();
           },
           (error) => {
             setShowConfetti(false);
             console.log("FAILED...", error.text);
-          }
+          },
         );
       ReactGA.event({
         category: "Send Email",
@@ -76,16 +77,45 @@ const Contact = () => {
           </span>
           <ul className="connect_socialMediaList">
             <li className="social-media-el">
-              <FaFacebook size={35} />
+              <a
+                className="social-icon-box"
+                href="https://www.facebook.com/rojus.balciunas"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Facebook profile"
+              >
+                <img
+                  src="/facebook.svg"
+                  alt="Facebook"
+                  className="social-icon"
+                />
+              </a>
             </li>
             <li className="social-media-el">
-              <FaInstagram size={35} />
+              <a
+                className="social-icon-box"
+                href="https://www.linkedin.com/in/rojus-bal%C4%8Di%C5%ABnas-9b2599292/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open LinkedIn profile"
+              >
+                <img
+                  src="/linkedin.svg"
+                  alt="LinkedIn"
+                  className="social-icon"
+                />
+              </a>
             </li>
             <li className="social-media-el">
-              <FaSms size={35} />
-            </li>
-            <li className="social-media-el">
-              <RiTwitterXFill size={35} />
+              <a
+                className="social-icon-box"
+                href="https://x.com/devRojka"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open X profile"
+              >
+                <img src="/twitter.svg" alt="X" className="social-icon" />
+              </a>
             </li>
           </ul>
         </div>
@@ -112,12 +142,26 @@ const Contact = () => {
               </span>
             )}
             <textarea placeholder="Message: " {...register("message")} />
-            {errors.message && (
-              <span className="form-error-message">
-                {errors.message.message}
-              </span>
-            )}
-            <input type="submit" value="Send" />
+            <div className="row">
+              <input
+                type="submit"
+                value="Send"
+                className={successfullySent ? "submit-success" : ""}
+              />
+              {errors.message && (
+                <span className="form-error-message">
+                  {errors.message.message}
+                </span>
+              )}
+              {successfullySent ? (
+                <div className="send-confirmation">
+                  <img src="/checkmark.svg" alt="Successfully sent" />
+                  <span>Form submitted.</span>
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
           </form>
         </div>
       </div>

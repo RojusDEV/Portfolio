@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Contact from "./layout/Contact/Contact";
+import Experience from "./layout/Experience/Experience";
 import Hero from "./layout/Hero/Hero";
 import Navbar from "./layout/Navbar/Navbar";
 import Projects from "./layout/Projects/Projects";
@@ -7,7 +8,7 @@ import "./scss/style.scss";
 import ReactGA from "react-ga4";
 // TODO:
 //   [] Add comets in the background
-//   [] Stack redirects to technologies
+//   [X] Stack redirects to technologies
 //   [] WHEN HOVERING ON STACK ADD STARS
 //   [X] ADD BACKGROUND GRID
 //   [] Add confetti after submit !!!!
@@ -39,6 +40,7 @@ function App() {
       <Navbar />
       <Hero />
       <Projects />
+      <Experience />
       {/* //Reviews by people   */}
       <Contact />
     </div>

@@ -5,7 +5,7 @@ import EbayClone from "../../assets/ebay.jpg";
 import NftWebsiteClone from "../../assets/NFTWebsitePreview.png";
 const Projects = () => {
   return (
-    <section className="projects">
+    <section className="projects" id="projects-id">
       <div className="projects__wrapper">
         <span className="projects-title">PROJECTS</span>
         <div className="project-grid">
