@@ -6,18 +6,24 @@ const Navbar = () => {
       <div className="navbar__container">
         <ul className="ordered-list">
           <li className="nav-el">
-            <span>Home</span>
+            <a href="#">
+              <span>Home</span>
+            </a>
           </li>
           <li className="nav-el">
-            <a href="#projects-id">
+            <a href="#projects-section-id">
               <span>Projects</span>
             </a>
           </li>
           <li className="nav-el">
-            <span>Experience</span>
+            <a href="#experience-section-id">
+              <span>Experience</span>
+            </a>
           </li>
           <li className="nav-el">
-            <span>Contact</span>
+            <a href="#contact-section-id">
+              <span>Contact</span>
+            </a>
           </li>
         </ul>
       </div>

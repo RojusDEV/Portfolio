@@ -5,7 +5,7 @@ import EbayClone from "../../assets/ebay.jpg";
 import NftWebsiteClone from "../../assets/NFTWebsitePreview.png";
 const Projects = () => {
   return (
-    <section className="projects" id="projects-id">
+    <section className="projects" id="projects-section-id">
       <div className="projects__wrapper">
         <span className="projects-title">PROJECTS</span>
         <div className="project-grid">
@@ -17,13 +17,13 @@ const Projects = () => {
           </ProjectCardLayout>
           <ProjectCardLayout
             bgImageSrc={EbayClone}
-            projectLink="https://notion.so/product"
+            projectLink="https://ebejus.vercel.app"
           >
             <ProjectCardTitle>Ebay Clone</ProjectCardTitle>
           </ProjectCardLayout>
           <ProjectCardLayout
             bgImageSrc={NftWebsiteClone}
-            projectLink="https://roy404dev.github.io/NFTWebsite/"
+            projectLink="https://rojusdev.github.io/NFTWebsite/"
           >
             <ProjectCardTitle>NFT Landing Page</ProjectCardTitle>
           </ProjectCardLayout>
