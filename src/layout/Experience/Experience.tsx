@@ -14,10 +14,23 @@ const Experience = () => {
       company: "Edenred",
       date: "March 2026 – Present",
       points: [
-        "Started internship as a QA tester for desktop applications",
-        "Performed manual testing and identified bugs in user workflows",
-        "Worked with developers to improve product quality",
-        "Learned QA processes, tools like JIRA and XRAY",
+        "Learned QA process fundamentals: test planning, execution, and results analysis",
+        "Gained hands-on experience with testing tools (JIRA, XRay) for bug tracking and test management",
+        "Executed manual testing against test plans to ensure software quality and identify defects",
+        "Created test plans and 20+ test scenarios for features, documented findings with clear reproduction steps",
+        "Reported and tracked 10+ quality defects with severity/priority levels and collaborated with developers",
+        "Prepared test reports with metrics including test coverage and pass/fail analysis",
+      ],
+    },
+    {
+      title: "Computer Science Student",
+      company: "Vilnius Tech",
+      date: "2024 – Present",
+      points: [
+        "Learning core computer science fundamentals and software engineering principles",
+        "Building projects in multiple programming languages including Python, Java, and C++",
+        "Studying data structures, algorithms, and software architecture patterns",
+        "Gaining hands-on experience through practical lab work and academic projects",
       ],
     },
     {
@@ -36,7 +49,7 @@ const Experience = () => {
   return (
     <section className="experience" id="experience-section-id">
       <div className="experience__wrapper">
-        <h2 className="experience-title">EXPERIENCE</h2>
+        <h2 className="experience-title">My Journey</h2>
         <div className="timeline">
           {experiences.map((exp, index) => (
             <div key={index} className="timeline-item">
