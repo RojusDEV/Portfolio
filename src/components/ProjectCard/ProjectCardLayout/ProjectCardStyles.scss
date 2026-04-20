@@ -1,6 +1,6 @@
-@use "../../../scss/abstract/colors";
-
 .nostyle {
+  display: block;
+
   &:link {
     text-decoration: inherit;
     color: inherit;
@@ -18,19 +18,38 @@
   cursor: pointer;
   height: 100%;
   position: relative;
-  transition: 200ms ease-in-out;
+  overflow: hidden;
+  border: 1px solid rgba(117, 98, 224, 0.28);
+  background: rgba(14, 14, 24, 0.74);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 0 rgba(0, 212, 255, 0);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
 
   .project-date {
     opacity: 0;
     position: absolute;
-    background-color: #e63946;
+    background: linear-gradient(
+      135deg,
+      rgba(117, 98, 224, 0.95),
+      rgba(0, 212, 255, 0.9)
+    );
+    color: #f4f2ff;
     font-weight: 600;
-    padding: 0.25em;
-    font-size: 1.3rem;
-    right: -1em;
-    top: -1em;
+    padding: 0.3em 0.55em;
+    font-size: 1rem;
+    right: 0.8em;
+    top: 0.8em;
     border-radius: 0.5em;
-    transition: opacity 0.5s linear, visibility 0.5s linear;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 18px rgba(117, 98, 224, 0.34);
+    z-index: 3;
+    transition:
+      opacity 0.5s linear,
+      visibility 0.5s linear;
   }
 
   &:hover {
@@ -43,29 +62,62 @@
     height: 14em;
     width: 100%;
     background-size: cover;
+    background-position: center;
     border-radius: 18px 18px 0 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10, 10, 18, 0.8) 0%,
+        rgba(10, 10, 18, 0.22) 45%,
+        rgba(10, 10, 18, 0.05) 100%
+      );
+    }
   }
+
   .project__info {
-    background-color: colors.$card-bg-color;
+    background: linear-gradient(
+      135deg,
+      rgba(20, 16, 40, 0.96),
+      rgba(12, 18, 36, 0.96)
+    );
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.75em 1.43em;
     border-radius: 0 0 18px 18px;
+    border-top: 1px solid rgba(117, 98, 224, 0.24);
+
     .project-info-col {
       display: grid;
       justify-items: start;
+
       .click-here {
-        color: #c5c5c5;
+        color: #d2ccff;
         font-weight: 800;
         font-size: 0.625rem;
+        letter-spacing: 0.09em;
+      }
+
+      &:last-child {
+        color: #f4f2ff;
+        text-shadow:
+          0 0 14px rgba(117, 98, 224, 0.38),
+          0 0 20px rgba(0, 212, 255, 0.2);
       }
     }
   }
 
   &:hover {
-    //Hover state animation
-    transform: translateY(-20px);
-    box-shadow: 0 15px 20px 2px rgba(0, 0, 0, 0.292);
+    transform: translateY(-12px);
+    border-color: rgba(117, 98, 224, 0.62);
+    box-shadow:
+      0 18px 30px rgba(0, 0, 0, 0.42),
+      0 0 24px rgba(117, 98, 224, 0.32),
+      0 0 38px rgba(0, 212, 255, 0.16);
   }
 }

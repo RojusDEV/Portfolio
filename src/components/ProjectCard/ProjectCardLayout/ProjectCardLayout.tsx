@@ -31,11 +31,17 @@ const ProjectCardLayout = ({
       action: "Project_Click",
       label: "Element", // optional
     });
-  }
+  };
 
   return (
     <div className="" ref={ref}>
-      <a href={projectLink} target="_blank" aria-label="Project" className="nostyle" onClick={trackClick}>
+      <a
+        href={projectLink}
+        target="_blank"
+        aria-label="Project"
+        className="nostyle"
+        onClick={trackClick}
+      >
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 75 },
@@ -57,7 +63,7 @@ const ProjectCardLayout = ({
                 {children}
               </div>
               <div className="project-info-col">
-                <GoArrowUpRight size={25} color="white" />
+                <GoArrowUpRight size={25} />
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { CSSProperties, useEffect } from "react";
+import About from "./layout/About/About";
 import Contact from "./layout/Contact/Contact";
 import Experience from "./layout/Experience/Experience";
 import Hero from "./layout/Hero/Hero";
@@ -6,17 +7,9 @@ import Navbar from "./layout/Navbar/Navbar";
 import Projects from "./layout/Projects/Projects";
 import "./scss/style.scss";
 import ReactGA from "react-ga4";
-// TODO:
-//   [] Add comets in the background
-//   [X] Stack redirects to technologies
-//   [] WHEN HOVERING ON STACK ADD STARS
-//   [X] ADD BACKGROUND GRID
-//   [] Add confetti after submit !!!!
-//   [] Add arrow button in hero to scroll down
 
 function App() {
   const trackingId = import.meta.env.VITE_TRACKING_ID;
-
   let ran = true;
 
   useEffect(() => {
@@ -39,9 +32,9 @@ function App() {
     <div className="main-wrapper" id="content">
       <Navbar />
       <Hero />
+      <About />
       <Projects />
       <Experience />
-      {/* //Reviews by people   */}
       <Contact />
     </div>
   );
