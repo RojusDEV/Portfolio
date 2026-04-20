@@ -8,12 +8,44 @@
     padding: 0 2rem;
 
     .experience-title {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #8338ec;
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(1.65rem, 2.4vw, 2.8rem);
+      font-weight: 800;
       text-align: center;
       margin-bottom: 4rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: linear-gradient(95deg, #f4f2ff 0%, #c8b8ff 38%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow:
+        0 0 14px rgba(131, 56, 236, 0.22),
+        0 0 28px rgba(0, 212, 255, 0.18);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -0.7rem;
+        transform: translateX(-50%);
+        transform-origin: center;
+        width: min(82%, 15rem);
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba(131, 56, 236, 0),
+          rgba(131, 56, 236, 0.95) 30%,
+          rgba(0, 212, 255, 0.95) 70%,
+          rgba(0, 212, 255, 0)
+        );
+        box-shadow: 0 0 18px rgba(0, 212, 255, 0.3);
+        animation: heading-accent-pulse 2.8s ease-in-out infinite;
+      }
     }
 
     .timeline {
@@ -135,6 +167,21 @@
   }
 }
 
+@keyframes heading-accent-pulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(0.92);
+    opacity: 0.68;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.22);
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(1.08);
+    opacity: 1;
+    box-shadow: 0 0 22px rgba(0, 212, 255, 0.38);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .experience {
     .experience__wrapper {
@@ -178,7 +225,7 @@
       padding: 0 1.5rem;
 
       .experience-title {
-        font-size: 1.5rem;
+        font-size: clamp(1.45rem, 8vw, 1.9rem);
         margin-bottom: 2.5rem;
       }
 
