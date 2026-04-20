@@ -6,7 +6,7 @@ const ABOUT_HIGHLIGHTS = [
   "Turning ideas into polished, user-centered web experiences",
 ];
 
-const ABOUT_STACK = [
+const Frameworks = [
   "React",
   "TypeScript",
   "SCSS",
@@ -17,8 +17,12 @@ const ABOUT_STACK = [
   "JIRA",
   "GitHub",
   "C++",
-  "Java"
+  "Java",
 ];
+
+const UI = ["Tailwind CSS", "Shadcn", "Framer Motion", "React Spring"];
+
+const Databases = ["MySQL", "PostgreSQL", "Supabase"];
 
 const About = () => {
   return (
@@ -44,15 +48,36 @@ const About = () => {
               ))}
             </ul>
           </article>
-
           <article className="about-card about-card--stack">
-            <h3>Current toolbox</h3>
-            <div className="stack-list">
-              {ABOUT_STACK.map((stack) => (
-                <span key={stack} className="stack-pill">
-                  {stack}
-                </span>
-              ))}
+            <div className="stack-group">
+              <h3>Languages & Frameworks</h3>
+              <div className="stack-list">
+                {Frameworks.map((stack) => (
+                  <span key={stack} className="stack-pill">
+                    {stack}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="stack-group">
+              <h3>UI & Animation Libraries</h3>
+              <div className="stack-list">
+                {UI.map((stack) => (
+                  <span key={stack} className="stack-pill">
+                    {stack}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="stack-group stack-group--last">
+              <h3>Databases</h3>
+              <div className="stack-list">
+                {Databases.map((stack) => (
+                  <span key={stack} className="stack-pill">
+                    {stack}
+                  </span>
+                ))}
+              </div>
             </div>
           </article>
         </div>

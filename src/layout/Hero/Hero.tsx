@@ -1,7 +1,6 @@
 import "./Hero.scss";
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import Techstack from "../Techstack/Techstack";
 const Hero = () => {
   const ref = useRef(null);
   const mainControls = useAnimation();
@@ -48,7 +47,7 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-      <Techstack />
+      {/* <Techstack /> */}
     </div>
   );
 };

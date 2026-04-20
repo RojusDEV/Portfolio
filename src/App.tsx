@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect } from "react";
+import { useEffect } from "react";
 import About from "./layout/About/About";
 import Contact from "./layout/Contact/Contact";
 import Experience from "./layout/Experience/Experience";
