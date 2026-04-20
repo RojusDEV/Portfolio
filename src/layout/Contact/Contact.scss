@@ -37,6 +37,19 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid rgba(131, 56, 236, 0.15);
+            transition:
+              transform 0.2s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+
+            &:hover {
+              transform: translateY(-2px);
+              border-color: rgba(131, 56, 236, 0.55);
+              box-shadow:
+                0 0 14px rgba(131, 56, 236, 0.35),
+                0 0 24px rgba(0, 212, 255, 0.2);
+            }
           }
 
           .social-icon {
