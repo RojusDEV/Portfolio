@@ -61,8 +61,8 @@ const Contact = () => {
       ReactGA.event({
         category: "Send Email",
         action: "send_email",
-        label: "Form", // optional
-        transport: "xhr", // optional, beacon/xhr/image
+        label: "Form",
+        transport: "xhr",
       });
     }
   };
