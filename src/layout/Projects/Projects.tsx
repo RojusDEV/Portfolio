@@ -2,6 +2,8 @@ import "./Projects.scss";
 import ProjectCardLayout from "../../components/ProjectCard/ProjectCardLayout/ProjectCardLayout";
 import ProjectCardTitle from "../../components/ProjectCard/ProjectCardTitle/ProjectCardTitle";
 import EbayClone from "../../assets/ebay.jpg";
+import neapsikraukPreview from "../../assets/neapsikrauk-preview.png";
+
 import NftWebsiteClone from "../../assets/NFTWebsitePreview.png";
 const Projects = () => {
   return (
@@ -20,6 +22,12 @@ const Projects = () => {
             projectLink="https://ebejus.vercel.app"
           >
             <ProjectCardTitle>Ebay Clone</ProjectCardTitle>
+          </ProjectCardLayout>
+          <ProjectCardLayout
+            bgImageSrc={neapsikraukPreview}
+            projectLink="https://github.com/RojusDEV/neapsikrauk"
+          >
+            <ProjectCardTitle>Neapsikrauk</ProjectCardTitle>
           </ProjectCardLayout>
           <ProjectCardLayout
             bgImageSrc={NftWebsiteClone}
