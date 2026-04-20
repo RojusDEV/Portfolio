@@ -72,9 +72,6 @@ const Contact = () => {
       <div className="contactMe__wrapper">
         <div className="col col-testimonial">
           <span className="connect-heading">Connect with me:</span>
-          <span className="connect-sub">
-            Satisfied with me? Please contact me
-          </span>
           <ul className="connect_socialMediaList">
             <li className="social-media-el">
               <a
